@@ -246,6 +246,16 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TripPlanner.DataAcces\TripPlanner.DataAccess.csproj">
+      <Project>{718A5337-E132-46F8-833A-FC72F4AED4E4}</Project>
+      <Name>TripPlanner.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TripPlanner.Services\TripPlanner.Services.csproj">
+      <Project>{CF4D8B43-2B2C-454C-B54F-09B27ED451FF}</Project>
+      <Name>TripPlanner.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
