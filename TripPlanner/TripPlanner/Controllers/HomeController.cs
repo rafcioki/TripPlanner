@@ -1,9 +1,17 @@
 ﻿using System.Web.Mvc;
+using TripPlanner.Services.Repositories;
 
 namespace TripPlanner.Controllers
 {
 	public class HomeController : Controller
 	{
+		private readonly ITripRepository _tripRepository;
+
+		public HomeController(ITripRepository tripRepository)
+		{
+			_tripRepository = tripRepository;
+		}
+
 		public ActionResult Index()
 		{
 			return View();
