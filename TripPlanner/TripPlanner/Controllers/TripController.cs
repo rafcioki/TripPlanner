@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using AutoMapper;
 using TripPlanner.Services.Models;
 using TripPlanner.Services.Services;
 using TripPlanner.ViewModels;
@@ -30,10 +31,7 @@ namespace TripPlanner.Controllers
 				return View(newTrip);
 			}
 
-			_tripService.CreateNewTrip(new Trip
-			{
-				Name = newTrip.Name
-			});
+			_tripService.CreateNewTrip(Mapper.Map<Trip>(newTrip));
 
 			return RedirectToAction("New");
 		}
