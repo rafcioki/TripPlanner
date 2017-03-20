@@ -5,11 +5,8 @@ namespace TripPlanner.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly ITripRepository _tripRepository;
-
-		public HomeController(ITripRepository tripRepository)
+		public HomeController()
 		{
-			_tripRepository = tripRepository;
 		}
 
 		public ActionResult Index()

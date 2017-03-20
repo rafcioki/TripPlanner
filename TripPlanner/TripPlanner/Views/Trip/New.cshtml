@@ -1,0 +1,17 @@
+﻿@model TripPlanner.ViewModels.NewTripViewModel
+
+@{
+    ViewBag.Title = "New trip";
+}
+
+<h2>New trip</h2>
+
+@using (Html.BeginForm())
+{
+	<div>
+		@Html.LabelFor(trip => trip.Name)
+		@Html.TextBoxFor(trip => trip.Name)
+		@Html.ValidationMessageFor(trip => trip.Name)
+	</div>
+	<input type="submit" class="btn btn-primary" value="Save"/>
+}
