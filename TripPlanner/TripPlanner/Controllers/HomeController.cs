@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using TripPlanner.Services.Repositories;
 
 namespace TripPlanner.Controllers
 {

@@ -1,8 +1,11 @@
-﻿using System.Web.Mvc;
+﻿using System.Data.Entity;
+using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using SimpleInjector.Integration.Web.Mvc;
 using TripPlanner.CompositionRoot;
+using TripPlanner.DataAcces.DbSetup;
+using TripPlanner.Mapping;
 
 namespace TripPlanner
 {
@@ -17,6 +20,8 @@ namespace TripPlanner
 
 	        var container = DependencyInjectionConfig.CreateAndConfigureSimpleInjector();
 			DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
+			AutoMapperConfig.Configure();
+			Database.SetInitializer(new TripsDbInitializer());
         }
     }
 }

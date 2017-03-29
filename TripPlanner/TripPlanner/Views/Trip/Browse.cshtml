@@ -1,0 +1,10 @@
+﻿@model TripPlanner.ViewModels.DisplayTripViewModel
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+<h2>Browse</h2>
+
+@Html.LabelFor(trip => trip.Name)
+@Html.DisplayFor(trip => trip.Name)

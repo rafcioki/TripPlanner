@@ -5,6 +5,8 @@ namespace TripPlanner.Services.Repositories
 {
 	public interface ITripRepository
 	{
-		void SaveTrip(Trip newTrip);
+		Trip SaveTrip(Trip newTrip);
+		Trip GetById(int id);
+		IEnumerable<Trip> GetRecentTrips(int howMany);
 	}
 }

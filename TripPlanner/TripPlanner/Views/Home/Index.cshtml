@@ -3,5 +3,7 @@
 }
 
 <div class="jumbotron">
-    @Html.ActionLink("Start a new trip", "New", "Trip", null, new { @class = "btn btn-primary btn-lg" })
+	@Html.Action("GetRecentTrips", "Trip")
+
+	@Html.ActionLink("Start a new trip", "New", "Trip", null, new {@class = "btn btn-primary btn-lg"})
 </div>

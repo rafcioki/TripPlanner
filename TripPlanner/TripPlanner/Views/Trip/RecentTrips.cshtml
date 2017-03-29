@@ -1,0 +1,14 @@
+﻿@model IEnumerable<TripPlanner.ViewModels.DisplayTripViewModel>
+
+<div class="recent-trips">
+	Newest trips:
+	<ul>
+		@foreach (var trip in Model)
+		{
+			<li>
+				@Html.ActionLink(@trip.Name, "Browse", "Trip", new { id = @trip.Id }, null)
+			</li>
+		}
+	</ul>
+</div>
+

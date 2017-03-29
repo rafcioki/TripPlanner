@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TripPlanner.ViewModels
 {
-	public class NewTripViewModel
+	public class TripViewModel
 	{
 		[DisplayName("Trip name:")]
 		[Required(ErrorMessage = "Please enter the trip name.")]

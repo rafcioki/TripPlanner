@@ -1,4 +1,6 @@
-﻿using TripPlanner.Services.Models;
+﻿using System;
+using System.Collections.Generic;
+using TripPlanner.Services.Models;
 using TripPlanner.Services.Repositories;
 
 namespace TripPlanner.Services.Services
@@ -12,9 +14,20 @@ namespace TripPlanner.Services.Services
 			_tripRepository = tripRepository;
 		}
 
-		public void CreateNewTrip(Trip newTrip)
+		public Trip CreateNewTrip(Trip newTrip)
 		{
-			_tripRepository.SaveTrip(newTrip);
+			newTrip.Created = DateTime.Now;
+			return _tripRepository.SaveTrip(newTrip);
+		}
+
+		public Trip GetById(int id)
+		{
+			return _tripRepository.GetById(id);
+		}
+
+		public IEnumerable<Trip> GetRecentTrips(int howMany)
+		{
+			return _tripRepository.GetRecentTrips(howMany);
 		}
 	}
 }
