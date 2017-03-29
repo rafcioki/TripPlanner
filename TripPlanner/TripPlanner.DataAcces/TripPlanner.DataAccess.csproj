@@ -49,7 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContexts\SampleTripsSeed.cs" />
     <Compile Include="DataContexts\TripPlannerDataContext.cs" />
+    <Compile Include="DbSetup\TripsDbInitializer.cs" />
+    <Compile Include="Migrations\201703181522280_InitialCreate.cs" />
+    <Compile Include="Migrations\201703181522280_InitialCreate.Designer.cs">
+      <DependentUpon>201703181522280_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703292139006_test.cs" />
+    <Compile Include="Migrations\201703292139006_test.Designer.cs">
+      <DependentUpon>201703292139006_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EfTripRepository.cs" />
   </ItemGroup>
@@ -57,12 +68,19 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\TripPlanner.Services\TripPlanner.Services.csproj">
       <Project>{CF4D8B43-2B2C-454C-B54F-09B27ED451FF}</Project>
       <Name>TripPlanner.Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201703181522280_InitialCreate.resx">
+      <DependentUpon>201703181522280_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703292139006_test.resx">
+      <DependentUpon>201703292139006_test.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
